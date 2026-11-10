@@ -316,7 +316,7 @@ const STORAGE_KEYS = {
 // Configuración por defecto (Totalmente en la nube: Google Apps Script & Firebase)
 const DEFAULT_SETTINGS = {
   backendMode: "google_apps_script", // 'google_apps_script' | 'firebase'
-  appsScriptUrl: "https://script.google.com/macros/s/AKfycbzJaS2K0SKurqd8ucarVoe2s94Eher4XmcC0-AuHmF84d4NlHzKM9VPGLqxIVu3fZBq/exec", // URL oficial activa
+  appsScriptUrl: "https://script.google.com/macros/s/AKfycbyfXswyi0V8R7JQ_-gV4Xi0yYrwQhViFrUSYTeW1kyhIKk-pk6Y3M7YMTvP3RkT5bib/exec", // Nueva implementación oficial activa
   whatsappNumber: "+5492984926445", // Número oficial para checkout y atención
   contactEmail: "elianaenoriega@gmail.com", // Email oficial para consultas
   storeName: "Fruit Valley Patagonia",
@@ -335,9 +335,9 @@ export const API = {
     try {
       const data = localStorage.getItem(STORAGE_KEYS.SETTINGS);
       const parsed = data ? { ...DEFAULT_SETTINGS, ...JSON.parse(data) } : { ...DEFAULT_SETTINGS };
-      // Actualizar a la URL de Apps Script provista por el usuario
-      if (!parsed.appsScriptUrl || !parsed.appsScriptUrl.includes("AKfycbzJaS2K0SKurqd8ucarVoe2s94Eher4XmcC0")) {
-        parsed.appsScriptUrl = "https://script.google.com/macros/s/AKfycbzJaS2K0SKurqd8ucarVoe2s94Eher4XmcC0-AuHmF84d4NlHzKM9VPGLqxIVu3fZBq/exec";
+      // Actualizar a la nueva URL de Apps Script provista por el usuario
+      if (!parsed.appsScriptUrl || !parsed.appsScriptUrl.includes("AKfycbyfXswyi0V8R7JQ_-gV4Xi0yYrwQhViFrUSYTeW1kyhIKk-pk6Y3M7YMTvP3RkT5bib")) {
+        parsed.appsScriptUrl = "https://script.google.com/macros/s/AKfycbyfXswyi0V8R7JQ_-gV4Xi0yYrwQhViFrUSYTeW1kyhIKk-pk6Y3M7YMTvP3RkT5bib/exec";
       }
       if (parsed.backendMode === 'local') {
         parsed.backendMode = 'google_apps_script';
